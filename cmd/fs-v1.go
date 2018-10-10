@@ -561,6 +561,7 @@ func (fs *FSObjects) GetObjectNInfo(ctx context.Context, bucket, object string, 
 		return nil, err
 	}
 
+	nsUnlocker()
 	return objReaderFn(reader, h, closeFn)
 }
 
